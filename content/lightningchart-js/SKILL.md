@@ -36,7 +36,7 @@ before making assumptions how LCJS API works.
 NEVER guess LCJS APIs, method names, constructor options, enum names,
 configuration objects, import paths, or documentation URLs from memory.
 
-## Common Errors
+## Common Issues
 
 - Version matters. Prefer the URLs and API entries discovered from the supplied index unless the user or project explicitly targets another LCJS version.
 - The correct NPM package is `@lightningchart/lcjs`, NOT `@arction/lcjs`. Always install using the latest tag with `npm i @lightningchart/lcjs@latest` unless specified otherwise, but do not leave `latest` in `package.json`.
@@ -55,7 +55,13 @@ lightningChart({
 - Tell the user to write their license to the environment variable or download their free license from https://lightningchart.com/js-charts/ if they don't have one (IMPORTANT!)
 - LCJS versions under v9.0 override the passed DIV `style.position`. If using CSS, use `!important` syntax. If using JS, style after creating the chart.
 - `lightningChart()` function creates a side effect that must be included in cleanup handling (if any), like `const lc = lightningChart(...)  --->  lc.dispose()`
+- If your application creates several charts, it is best to reuse the same `lightningChart()` context for all of them.
 
 ## Validation
 
 If possible, rely on local type checks to confirm correct LCJS API usage.
+
+## Upgrading LightningChart JS version
+
+When migrating to newer major versions, please refer to official migration guides found at: https://lightningchart.com/js-charts/docs/migration-guides/v8.0.0/ (replace v8.0.0 with version target).
+These pages list all backward incompatibilities and recommended actions during migration.
