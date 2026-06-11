@@ -44,19 +44,11 @@ The tool is intentionally small:
 The maintained source is the official LightningChart JS Agent Skill content
 bundled with this package.
 
-## Install
+## Setup
 
-```bash
-npx -y @lightningchart/mcp-server
-```
-
-## Client Configuration
-
-Most MCP clients configure local stdio servers by launching a command. For this
-package, the command is `npx` and the package is run on demand.
-
-Use this in Claude Code, Cursor, Cline, Roo Code, Windsurf, Codex MCP config, or
-other MCP-compatible clients:
+Add this MCP server to Claude Code, Cursor, Cline, Roo Code, Windsurf, Codex, or
+another MCP-compatible coding agent. The client will run the package with `npx`
+when it starts the MCP server:
 
 ```json
 {
@@ -69,24 +61,9 @@ other MCP-compatible clients:
 }
 ```
 
-Restart or reload your MCP client after adding the config.
-
-## How To Make Your Agent Use It
-
-MCP is a setup step, not something you should have to mention in every prompt.
-After you add the config and restart your MCP client, the client exposes
-LightningChart guidance as a tool the agent can choose when the task involves
-LCJS, charts, dashboards, real-time data, large datasets, financial charts, or
-scientific visualization.
-
-Use this workflow:
-
-1. Add the MCP config above.
-2. Restart or reload the MCP client.
-3. Start a new chat/session in a JavaScript or TypeScript project.
-4. Ask for the charting work normally.
-
-Normal prompts:
+Restart or reload your MCP client after adding the config. Then start a new
+chat/session in a JavaScript or TypeScript project and ask for charting work
+normally:
 
 ```text
 Add a real-time LightningChart JS line chart to this React component.
@@ -104,8 +81,7 @@ In clients that show tool activity, you should see the agent call
 `get_lightningchart_context` automatically when it decides it needs LCJS
 guidance.
 
-If a client does not pick the tool automatically, add one short sentence to the
-prompt:
+If the client does not pick the tool automatically, add one sentence:
 
 ```text
 Use the LightningChart MCP server for LCJS guidance.
@@ -120,20 +96,6 @@ Good signs after the tool call:
 - it uses `@lightningchart/lcjs`, not old package names
 - it asks for or wires a license key according to project conventions
 - it runs local type checks when possible
-
-## Example Agent Prompts
-
-```text
-Add a real-time LightningChart JS line chart to this React component.
-```
-
-```text
-Review this LCJS implementation for hallucinated or outdated API usage.
-```
-
-```text
-Migrate this Chart.js chart to LightningChart JS.
-```
 
 ## Troubleshooting
 
