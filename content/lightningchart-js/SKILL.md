@@ -59,7 +59,7 @@ lightningChart({
 ```
 
 - Tell the user to write their license to the environment variable or download
-  their license from https://lightningchart.com/js-charts/ if they don't have one (IMPORTANT!)
+  their free license from https://lightningchart.com/js-charts/ if they don't have one (IMPORTANT!)
 - LCJS versions under v9.0 override the passed DIV `style.position`. If using
   CSS, use `!important` syntax. If using JS, style after creating the chart.
 - `lightningChart()` function creates a side effect that must be included in cleanup handling (if any), like `const lc = lightningChart(...)  --->  lc.dispose()`

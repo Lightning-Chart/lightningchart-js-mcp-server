@@ -1,55 +1,55 @@
 {
-  "name": "@lightningchart/mcp-server",
-  "version": "1.0.1",
-  "description": "MCP server that gives AI agents LightningChart JS source-of-truth guidance.",
-  "type": "module",
-  "homepage": "https://github.com/Lightning-Chart/lightningchart-js-mcp-server#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Lightning-Chart/lightningchart-js-mcp-server.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Lightning-Chart/lightningchart-js-mcp-server/issues"
-  },
-  "bin": {
-    "lightningchart-mcp-server": "./dist/index.js"
-  },
-  "files": [
-    "dist",
-    "content",
-    "README.md",
-    "LICENSE",
-    "package.json"
-  ],
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "check": "tsc -p tsconfig.json --noEmit",
-    "prepack": "npm run build",
-    "start": "node dist/index.js"
-  },
-  "keywords": [
-    "lightningchart",
-    "lcjs",
-    "mcp",
-    "model-context-protocol",
-    "charts",
-    "data-visualization",
-    "javascript",
-    "typescript",
-    "webgl",
-    "coding-agents",
-    "ai-agent"
-  ],
-  "author": "LightningChart Ltd.",
-  "license": "MIT",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.13.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.8.0"
-  },
-  "engines": {
-    "node": ">=20"
-  }
+    "name": "@lightningchart/mcp-server",
+    "version": "1.0.2",
+    "description": "MCP server that gives AI agents LightningChart JS source-of-truth guidance.",
+    "type": "module",
+    "homepage": "https://github.com/Lightning-Chart/lightningchart-js-mcp-server#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Lightning-Chart/lightningchart-js-mcp-server.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Lightning-Chart/lightningchart-js-mcp-server/issues"
+    },
+    "bin": {
+        "lightningchart-mcp-server": "./dist/index.js"
+    },
+    "files": [
+        "dist",
+        "content",
+        "README.md",
+        "LICENSE",
+        "package.json"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "check": "tsc -p tsconfig.json --noEmit",
+        "prepack": "npm run build",
+        "start": "node dist/index.js"
+    },
+    "keywords": [
+        "lightningchart",
+        "lcjs",
+        "mcp",
+        "model-context-protocol",
+        "charts",
+        "data-visualization",
+        "javascript",
+        "typescript",
+        "webgl",
+        "coding-agents",
+        "ai-agent"
+    ],
+    "author": "LightningChart Ltd.",
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.13.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "typescript": "^5.8.0"
+    },
+    "engines": {
+        "node": ">=20"
+    }
 }
