@@ -27,7 +27,7 @@ Always use these two LLM index files as the source of truth for
 LightningChart JS usage:
 
 - Documentation index: https://lightningchart.com/js-charts/docs/llms.txt
-- API index: https://lightningchart.com/js-charts/api-documentation/v8.3.1/llms.txt
+- API index: https://lightningchart.com/js-charts/api-documentation/llms.txt
 
 These files are indexes. Read them to find the exact task-specific
 documentation or API reference URL, then read that specific referenced page
@@ -38,15 +38,9 @@ configuration objects, import paths, or documentation URLs from memory.
 
 ## Common Errors
 
-- Version matters. Prefer the URLs and API entries discovered from the supplied
-  v8.3.1 API index unless the user or project explicitly targets another LCJS
-  version.
-- The correct NPM package is `@lightningchart/lcjs`, NOT `@arction/lcjs`.
-  Always install using the latest tag with `npm i @lightningchart/lcjs@latest`
-  unless specified otherwise, but do not leave `latest` in `package.json`.
-- License key MUST be supplied to the `lightningChart()` function. Load it from
-  an environment variable according to practices utilized in the local
-  repository. Setup trial license information in advance like this:
+- Version matters. Prefer the URLs and API entries discovered from the supplied index unless the user or project explicitly targets another LCJS version.
+- The correct NPM package is `@lightningchart/lcjs`, NOT `@arction/lcjs`. Always install using the latest tag with `npm i @lightningchart/lcjs@latest` unless specified otherwise, but do not leave `latest` in `package.json`.
+- License key MUST be supplied to the `lightningChart()` function. Load it from an environment variable according to practices utilized in the local repository. Setup trial license information in advance like this:
 
 ```ts
 lightningChart({
@@ -58,10 +52,8 @@ lightningChart({
 })
 ```
 
-- Tell the user to write their license to the environment variable or download
-  their free license from https://lightningchart.com/js-charts/ if they don't have one (IMPORTANT!)
-- LCJS versions under v9.0 override the passed DIV `style.position`. If using
-  CSS, use `!important` syntax. If using JS, style after creating the chart.
+- Tell the user to write their license to the environment variable or download their free license from https://lightningchart.com/js-charts/ if they don't have one (IMPORTANT!)
+- LCJS versions under v9.0 override the passed DIV `style.position`. If using CSS, use `!important` syntax. If using JS, style after creating the chart.
 - `lightningChart()` function creates a side effect that must be included in cleanup handling (if any), like `const lc = lightningChart(...)  --->  lc.dispose()`
 
 ## Validation
