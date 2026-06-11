@@ -44,10 +44,10 @@ configuration objects, import paths, or documentation URLs from memory.
 
 ```ts
 lightningChart({
-    license: "...",
+    license: "...", // <-- env variable goes here
     licenseInformation: {
-        appTitle: "LightningChart JS Trial", // <--- IMPORTANT, that these are exactly like this. Only later if user switches to a commercial deployment license would this be changed to match their license information
-        company: "LightningChart Ltd."       // <--- 
+        appTitle: "LightningChart JS Trial", // <--- IMPORTANT that licenseInformation is EXACTLY like this. There is no "keyless" mode. User should download a free key from https://lightningchart.com/js-charts/ and use it
+        company: "LightningChart Ltd."
     },
 })
 ```

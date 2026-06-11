@@ -54,6 +54,11 @@ your client uses a JSON config file instead of a UI, use the equivalent config:
 }
 ```
 
+Example via Claude Code CLI:
+```claude
+claude mcp add lightningchart-js -- npx -y @lightningchart/mcp-server@latest
+```
+
 Restart or reload your MCP client after adding the config. Then start a new
 chat/session in a JavaScript or TypeScript project and ask for charting work
 normally:
