@@ -18,37 +18,30 @@ signatures. This server gives the agent a reliable starting point:
 - common mistakes and outdated assumptions agents should avoid
 - validation guidance for confirming LCJS API usage locally
 
-It does not replace the documentation and it does not maintain its own separate
-knowledge base. It loads the official LightningChart JS Agent Skill guidance and
-returns it through MCP.
-
-## How It Works
-
-The server exposes one MCP tool:
-
-```text
-get_lightningchart_context
-```
-
-When the coding agent calls this tool, it receives the same guidance as the
-LightningChart JS Agent Skill.
-
-The tool is intentionally small:
-
-- no external HTTP calls
-- no scraping
-- no doc proxying
-- no hidden state
-- no separate knowledge base
-
-The maintained source is the official LightningChart JS Agent Skill content
-bundled with this package.
+It loads the official LightningChart JS Agent Skill guidance maintained by the
+LightningChart JS maintainers.
 
 ## Setup
 
 Add this MCP server to Claude Code, Cursor, Cline, Roo Code, Windsurf, Codex, or
-another MCP-compatible coding agent. The client will run the package with `npx`
-when it starts the MCP server:
+another MCP-compatible coding agent.
+
+Many clients have a UI for adding a custom MCP server, so you do not necessarily
+need to edit a JSON file manually. Use these values:
+
+```text
+Name: LightningChart
+Transport: STDIO
+Command: npx
+Arguments: -y
+Arguments: @lightningchart/mcp-server
+Environment variables: leave empty
+Environment variable passthrough: leave empty
+Working directory: your project folder
+```
+
+The client will run the package with `npx` when it starts the MCP server. If
+your client uses a JSON config file instead of a UI, use the equivalent config:
 
 ```json
 {
