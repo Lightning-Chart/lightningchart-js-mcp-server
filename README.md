@@ -7,6 +7,8 @@ This MCP server is for developers using Claude Code, Cursor, Cline, Roo Code,
 Codex, Windsurf, or any other MCP-compatible coding agent to build
 LightningChart JS charts, dashboards, and data visualizations.
 
+**For latest user guides on LightningChart JS and AI, please refer to the [Developer Documentation](https://lightningchart.com/js-charts/docs/lc-and-ai/)**
+
 ## Why This Exists
 
 AI agents often produce broken LightningChart JS code because they mix LCJS with

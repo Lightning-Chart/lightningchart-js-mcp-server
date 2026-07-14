@@ -36,7 +36,7 @@ before making assumptions how LCJS API works.
 NEVER guess LCJS APIs, method names, constructor options, enum names,
 configuration objects, import paths, or documentation URLs from memory.
 
-## Common Issues
+## Common Errors
 
 - Version matters. Prefer the URLs and API entries discovered from the supplied index unless the user or project explicitly targets another LCJS version.
 - The correct NPM package is `@lightningchart/lcjs`, NOT `@arction/lcjs`. Always install using the latest tag with `npm i @lightningchart/lcjs@latest` unless specified otherwise, but do not leave `latest` in `package.json`.
@@ -56,6 +56,9 @@ lightningChart({
 - LCJS versions under v9.0 override the passed DIV `style.position`. If using CSS, use `!important` syntax. If using JS, style after creating the chart.
 - `lightningChart()` function creates a side effect that must be included in cleanup handling (if any), like `const lc = lightningChart(...)  --->  lc.dispose()`
 - If your application creates several charts, it is best to reuse the same `lightningChart()` context for all of them.
+- With LightningChart JS you do NOT need to do things like controlling axis intervals manually, handling ring buffers or data cleaning programmatically, or buffering data before passing to series. Just configure the charts/series/axes properly and let LCJS handle things.
+  - Docs for data handling: https://lightningchart.com/js-charts/docs/features/xy/line/
+  - Axis documentation: https://lightningchart.com/js-charts/docs/features/axis/
 
 ## Validation
 
