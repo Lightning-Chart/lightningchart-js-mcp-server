@@ -1,6 +1,6 @@
 {
     "name": "@lightningchart/mcp-server",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "MCP server that gives AI agents LightningChart JS source-of-truth guidance.",
     "type": "module",
     "homepage": "https://github.com/Lightning-Chart/lightningchart-js-mcp-server#readme",
@@ -22,10 +22,14 @@
         "package.json"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json",
-        "check": "tsc -p tsconfig.json --noEmit",
+        "generate:worker-content": "node scripts/generate-worker-content.mjs",
+        "build": "npm run generate:worker-content && tsc -p tsconfig.json && tsc -p tsconfig.worker.json",
+        "check": "npm run generate:worker-content && tsc -p tsconfig.json --noEmit && tsc -p tsconfig.worker.json",
         "prepack": "npm run build",
-        "start": "node dist/index.js"
+        "start": "node dist/index.js",
+        "dev:worker": "npm run generate:worker-content && node scripts/wrangler.mjs dev",
+        "deploy:worker": "npm run generate:worker-content && node scripts/wrangler.mjs deploy",
+        "dry-run:worker": "npm run generate:worker-content && node scripts/wrangler.mjs deploy --dry-run"
     },
     "keywords": [
         "lightningchart",
@@ -43,11 +47,14 @@
     "author": "LightningChart Ltd.",
     "license": "MIT",
     "dependencies": {
-        "@modelcontextprotocol/sdk": "^1.13.0"
+        "@modelcontextprotocol/sdk": "^1.13.0",
+        "agents": "^0.17.3"
     },
     "devDependencies": {
+        "@cloudflare/workers-types": "^5.20260713.1",
         "@types/node": "^22.0.0",
-        "typescript": "^5.8.0"
+        "typescript": "^5.8.0",
+        "wrangler": "^4.110.0"
     },
     "engines": {
         "node": ">=20"
